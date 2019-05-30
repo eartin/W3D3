@@ -19,5 +19,6 @@ elsif response == 'visit'
   response = gets.chomp
   url = ShortenedUrl.find_by(long_url: response)
   Visit.new(user_id: user.id, url_id: url.id )
+  launchy url.long_url
 end
 
